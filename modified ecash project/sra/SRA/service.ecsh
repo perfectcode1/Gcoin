@@ -1,0 +1,20 @@
+<?php
+require_once("app.init");
+require_once("lib/gsocket.php");
+$s=new server;
+if($s->start()){
+	$rc = $s->restarts();
+	$cns = $s->connections();
+	$time = $s->servertime();
+	$when = date(config::$timeFormat,$s->starttime);
+	$lastrestart = date(config::$timeFormat,$s->restarttime);
+	gio::output("");
+	gio::output("\nThe server was restarted $rc times and received a total of $cns connections.\n");
+	gio::output("\nThe server ran for $time seconds from $when; Last restarted: $lastrestart.\n");
+	gio::output("");
+	gio::output(config::$exitMessage);
+}else{
+	gio::output("Unable to start the server");
+}
+gio::output("");
+?>

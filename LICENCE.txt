@@ -1,0 +1,3 @@
+This work is licenced to Mr Princewill to enable him demonstrate and proof that the implementation of the model contained in these set of applications can help abolish the problem of double spending in digital currency systems in his PHD project only.
+No one is authorized to copy, modify, distribute, reuse, or alter the program without the written permission of the writer Godson Tudeme [perfectcode1@gmail.com]
+Packaged November 1, 2015 12:57 am GMT+1.

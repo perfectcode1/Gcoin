@@ -1,0 +1,22 @@
+<?php
+error_reporting(0);
+define('HOME_DIR','.',true);
+define('DS',DIRECTORY_SEPARATOR, true);
+define('VERBOSE',(E_USER_NOTICE + 1), true);
+require_once("default.conf");
+require_once(HOME_DIR.DS."lib".DS."gtools.php");
+require_once(HOME_DIR.DS."lib".DS."gio.php");
+require_once(HOME_DIR.DS."lib".DS."gcrypt.php");
+require_once(HOME_DIR.DS."lib".DS."gcrypto.php");
+require_once(HOME_DIR.DS."lib".DS."gmessage.php");
+require_once(HOME_DIR.DS."lib".DS."gwire.php");
+require_once(HOME_DIR.DS."blocks".DS."magic.php");
+require_once(HOME_DIR.DS."blocks".DS."storage.php");
+require_once(HOME_DIR.DS."blocks".DS."account.php");
+require_once(HOME_DIR.DS."blocks".DS."transaction.php");
+$ddc = getenv('SystemDrive').DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."openssl.cnf";
+putenv("OPENSSL_CONF=$ddc");
+@GsonCrypt::$keyOpts['config'] = getenv('OPENSSL_CONF');
+config::$accountId = gio::readfile(config::$accountIdFile);
+config::$bankId = gio::readfile(config::$bankIdFile);
+?>

@@ -1,0 +1,13 @@
+PAYMENT RESPONSE CODES
+
+0 = Successful
+1 = counterfeit Ecash Detected in Transaction [An attempt to spend a counterfeit eCash]
+2 = Already Spent Ecash Detected [Double spending attempt]
+3 = Invalid Ecash Secret Detected in Transaction [Valid eCash belonging to client with a modified/tampered eCash secret]
+4 = The total eCash value supplied by the client is less than the merchant's request [Client has adjusted wallet to tender less than the requested amount]
+5 = Unable to compute the splitting eCash units for client's change [SRA does not have enough eCash units to compute client's change]
+6 = Unable to select the computed eCash units for client's change [SRA encountered and error while issuring eCash change to client]
+10 = Merchant's bank did not respond to the request
+11 = Merchant's bank responded with an invalid message
+12 = Merchant's bank returned an error
+
